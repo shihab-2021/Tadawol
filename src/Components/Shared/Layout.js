@@ -70,12 +70,12 @@ const Layout = ({ children }) => {
           <div className="flex overflow-hidden">
             <aside
               id="sidebar"
-              className={`fixed ${
+              className={`h-full min-h-[100vh] relative ${
                 toggleButton ? "hidden" : ""
-              } z-20 h-full top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
+              } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
               aria-label="Sidebar"
             >
-              <div className=" flex-1 flex flex-col min-h-0 pt-0">
+              <div className="fixed h-full w-[250px] flex-1 flex flex-col min-h-0 pt-0">
                 <div className="flex-1 flex flex-col pb-4 overflow-y-auto">
                   <div className="flex-1 space-y-1">
                     <div className="py-8 h-[70px] flex items-center justify-between lg:justify-center">
@@ -102,10 +102,7 @@ const Layout = ({ children }) => {
               className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10"
               id="sidebarBackdrop"
             ></div>
-            <div
-              id="main-content"
-              className="h-full w-full relative lg:ml-[250px]"
-            >
+            <div id="main-content" className="h-full w-full relative ">
               <Navbar />
               <main className="min-h-[100vh]">
                 <div className="">{children}</div>
