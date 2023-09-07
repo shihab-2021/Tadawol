@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 const Trades = () => {
@@ -190,44 +190,69 @@ const Trades = () => {
       ),
     },
   ];
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Update the screenWidth state when the window is resized
+    function handleResize() {
+      setScreenWidth(window.innerWidth);
+    }
+
+    // Add an event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log(`Screen Width: ${screenWidth}px is working`);
   return (
-    <div>
-      <div className="max-w-64 bg-white py-[20px] overflow-hidden hidden sm:flex items-center">
-        <Marquee
-          // className="w-64"
-          direction={"left"}
-          autoFill={true}
-          gradientWidth={50}
-          gradient={true}
-          speed={50}
-        >
-          {tradesStocks?.map((tradesStock, index) => {
-            return (
-              <div key={index}>
-                <div className="flex justify-between  gap-[8px] border-r-[1px] border-[#787880] px-[28px] min-w-[250px] ">
-                  <div>
-                    <h2 className="text-[#3C3C4399] text-[13px] font-[600] ">
-                      {tradesStock?.companyName}
-                    </h2>
-                    <h1 className="text-black text-[20px] font-[500] ">
-                      ${tradesStock?.stockPrice}
-                    </h1>
-                    <h2
-                      className={`${
-                        tradesStock?.rating[0] === "+"
-                          ? "text-[#4BA33B]"
-                          : "text-[#8A8A8E]"
-                      }  font-[400] `}
-                    >
-                      {tradesStock?.rating}
-                    </h2>
+    <div className="w-full bg-white">
+      <div
+        style={{
+          width: screenWidth - 265,
+        }}
+      >
+        <div className=" bg-white py-[20px] overflow-hidden hidden lg:flex items-center">
+          <Marquee
+            // className="w-64"
+            direction={"left"}
+            autoFill={true}
+            gradientWidth={80}
+            gradient={true}
+            speed={50}
+          >
+            {tradesStocks?.map((tradesStock, index) => {
+              return (
+                <div key={index}>
+                  <div className="flex justify-between  gap-[8px] border-r-[1px] border-[#787880] px-[28px] min-w-[250px] ">
+                    <div>
+                      <h2 className="text-[#3C3C4399] text-[13px] font-[600] ">
+                        {tradesStock?.companyName}
+                      </h2>
+                      <h1 className="text-black text-[20px] font-[500] ">
+                        ${tradesStock?.stockPrice}
+                      </h1>
+                      <h2
+                        className={`${
+                          tradesStock?.rating[0] === "+"
+                            ? "text-[#4BA33B]"
+                            : "text-[#8A8A8E]"
+                        }  font-[400] `}
+                      >
+                        {tradesStock?.rating}
+                      </h2>
+                    </div>
+                    <div className="flex items-end ">{tradesStock?.graph}</div>
                   </div>
-                  <div className="flex items-end ">{tradesStock?.graph}</div>
                 </div>
-              </div>
-            );
-          })}
-        </Marquee>
+              );
+            })}
+          </Marquee>
+        </div>
       </div>
     </div>
   );

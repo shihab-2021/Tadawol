@@ -7,11 +7,13 @@ import Trades from "../Components/Home/Trades";
 
 const Home = () => {
   return (
-    <div>
+    <div className="md:bg-[#F2F2F7]">
       <Layout>
         <Trades />
-        <Wallet />
-        <WatchList />
+        <div className="mx-auto max-w-[885px] mt-[40px] flex items-center flex-col lg:flex-row gap-[32px] 2xl:gap-[60px] ">
+          <Wallet />
+          <WatchList />
+        </div>
         <TopTraders />
       </Layout>
     </div>

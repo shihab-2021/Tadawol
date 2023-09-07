@@ -5,9 +5,9 @@ import ie from "./../../Assets/Home/Logo (2).png";
 import Right from "./../../Assets/Home/Logo (3).png";
 const WatchList = () => {
   return (
-    <div className="">
-      <h2 className=" text-xl font-semibold mb-4">Watchlist</h2>
-      <div className="p-6 w-[312px] h-[240px] rounded-[20px] shadow">
+    <div className="w-full px-[2px] md:px-4">
+      <h2 className=" text-xl font-semibold mb-4">Watch list</h2>
+      <div className="p-6 w-[312px] h-[240px] rounded-[20px] shadow bg-white">
         <div className="flex">
           <img className=" z-10" src={Apple} alt="" />
           <img className="-ml-5 z-0" src={Google} alt="" />
