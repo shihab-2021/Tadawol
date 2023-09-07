@@ -7,7 +7,7 @@ import Label from '../../Assets/Navbar/Label.png';
 
 const Navbar = () => {
   return (
-    <nav className="h-[70px] border-b-[1px]">
+    <nav className="h-[70px] border-b-[1px] bg-[#fff]">
       <div className="flex pt-[10px] justify-between items-center">
         <div className="w-[50%] h-[38px] flex items-center px-4 text-[17px] font-normal ms-[48px]"
           style={{
@@ -23,7 +23,7 @@ const Navbar = () => {
             className="w-[100%] mx-2" type="text" placeholder="Search for stock, crypto, NTF ..." />
           <KeyboardVoiceIcon />
         </div>
-        <div className="w-[50%] flex items-center justify-end me-[300px]">
+        <div className="w-[50%] flex items-center justify-end me-[56px]">
           <div>
             <NotificationsIcon  />
           </div>
