@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import profile from "../../Assets/Navbar/profile.png";
+import BottomNavBar from "./BottomNavBar";
 
 const Layout = ({ children }) => {
   const [toggleButton, setToggleButton] = useState(true);
@@ -38,9 +39,8 @@ const Layout = ({ children }) => {
           >
             <div className="px-3 py-3 lg:px-5 lg:pl-3">
               <div
-                className={`flex items-center justify-between ${
-                  toggleButton ? "" : "hidden"
-                }`}
+                className={`flex items-center justify-between ${toggleButton ? "" : "hidden"
+                  }`}
               >
                 <button
                   id="toggleSidebarMobile"
@@ -65,9 +65,8 @@ const Layout = ({ children }) => {
           <div className="flex overflow-hidden">
             <aside
               id="sidebar"
-              className={`h-full min-h-[100vh] relative ${
-                toggleButton ? "hidden" : ""
-              } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
+              className={`h-full min-h-[100vh] relative ${toggleButton ? "hidden" : ""
+                } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
               aria-label="Sidebar"
             >
               <div className="fixed bg-white h-full w-[250px] flex-1 flex flex-col min-h-0 pt-0">
@@ -103,6 +102,10 @@ const Layout = ({ children }) => {
                 <div className="">{children}</div>
               </main>
             </div>
+          </div>
+
+          <div className="md:hidden block">
+            <BottomNavBar />
           </div>
         </div>
       </div>
