@@ -194,7 +194,7 @@ const Trades = () => {
     <div>
       <div className="max-w-64 bg-white py-[20px] overflow-hidden hidden sm:flex items-center">
         <Marquee
-          className="w-64"
+          // className="w-64"
           direction={"left"}
           autoFill={true}
           gradientWidth={50}
