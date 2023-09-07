@@ -10,7 +10,7 @@ const Home = () => {
     <div className="md:bg-[#F2F2F7]">
       <Layout>
         <Trades />
-        <div className="mx-auto max-w-[885px] mt-[40px] flex items-center flex-col lg:flex-row gap-[32px] 2xl:gap-[60px] ">
+        <div className="mx-auto max-w-[885px] mt-[80px] md:mt-[40px] flex items-center flex-col lg:flex-row gap-[32px] 2xl:gap-[60px] ">
           <Wallet />
           <WatchList />
         </div>
