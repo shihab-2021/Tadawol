@@ -28,8 +28,16 @@ const Navbar = () => {
           <KeyboardVoiceIcon />
         </div>
         <div className="w-[50%] flex items-center justify-end me-[14px]">
-          <div>
+          <div className="flex">
             <NotificationsIcon />
+            <p className="h-[20px] w-[20px] flex justify-center items-center text-xs font-medium ms-[-10px] mt-[-8px]"
+              style={{
+                borderRadius: "32px",
+                border: "2px solid var(--system-background-light-primary, #FFF)",
+                background: "var(--brand-lime-green, #D9F867)"
+
+              }}
+            >3</p>
           </div>
           <div className="ms-[29px]">
             <h1 className="text-[17px] font-semibold">Mohammed Al-Haj</h1>
@@ -46,7 +54,7 @@ const Navbar = () => {
               Expert Trader{" "}
             </p>
           </div>
-          <div className="bg-[#EAF3E6] rounded-[100px] h-[44px] w-[44px] flex justify-center items-center ms-3">
+          <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
             <img src={profile} alt="profile" />
           </div>
         </div>

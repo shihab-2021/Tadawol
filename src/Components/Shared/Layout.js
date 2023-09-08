@@ -7,6 +7,9 @@ import Navbar from "./Navbar";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import profile from "../../Assets/Navbar/profile.png";
 import BottomNavBar from "./BottomNavBar";
+import Label from "../../Assets/Navbar/Label.png";
+import ChevronLeftSmall from "../../Assets/Home/ChevronLeftSmall.png";
+import logo from "../../Assets/Navbar/logo.png";
 
 const Layout = ({ children }) => {
   const [toggleButton, setToggleButton] = useState(true);
@@ -33,27 +36,39 @@ const Layout = ({ children }) => {
       <div>
         <div>
           <nav
-            className={`bg-white fixed z-30 w-full lg:hidden ${
-              toggleButton ? "" : "hidden"
-            }`}
+            className={`bg-white fixed z-30 w-full lg:hidden ${toggleButton ? "" : "hidden"
+              }`}
           >
             <div className="px-3 py-3 lg:px-5 lg:pl-3">
               <div
                 className={`flex items-center justify-between ${toggleButton ? "" : "hidden"
                   }`}
               >
-                <button
-                  id="toggleSidebarMobile"
-                  ariaExpanded="true"
-                  ariaControls="sidebar"
-                  className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
-                  onClick={handleClick}
-                >
-                  <img src={Menu} alt="Menu" />
-                </button>
                 <div className="flex items-center">
-                  <div>
+                  <button
+                    id="toggleSidebarMobile"
+                    ariaExpanded="true"
+                    ariaControls="sidebar"
+                    className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
+                    onClick={handleClick}
+                  >
+                    <img src={Menu} alt="Menu" />
+                  </button>
+                  <p>Menu</p>
+                </div>
+
+
+                <div className="flex items-center">
+                  <div className="flex">
                     <NotificationsIcon />
+                    <p className="h-[20px] w-[20px] flex justify-center items-center text-xs font-medium ms-[-10px] mt-[-8px]"
+                      style={{
+                        borderRadius: "32px",
+                        border: "2px solid var(--system-background-light-primary, #FFF)",
+                        background: "var(--brand-lime-green, #D9F867)"
+
+                      }}
+                    >3</p>
                   </div>
                   <div className="bg-[#EAF3E6] rounded-[100px] h-[44px] w-[44px] flex justify-center items-center ms-3">
                     <img src={profile} alt="profile" />
@@ -74,18 +89,52 @@ const Layout = ({ children }) => {
                   <div className="flex-1 space-y-1">
                     <div className="py-8 h-[70px] flex items-center justify-between lg:justify-center">
                       {/* <Link className="hidden lg:block" to={"/"}> */}
-                      <img className="h-6 lg:h-8" src={Logo} alt="icon" />
+                      {/* <img className="h-6 lg:h-8 " src={Logo} alt="icon" /> */}
                       {/* </Link> */}
-                      <p className="text-[#676767] ml-[27px] lg:hidden">Menu</p>
+                      {/* <p className="text-[#676767] ml-[27px] lg:hidden">Menu</p> */}
+                      <div className="lg:flex items-center gap-[18px] hidden">
+                        <p
+                          style={{
+                            borderRadius: "100px",
+                            background: "var(--brand-lime-green, #D9F867)"
+                          }}
+                        ><img src={logo} alt="icon" /></p>
+                        <p className=" text-[#000000] text-xl font-semibold">Tadawol</p>
+                      </div>
                       <button
                         id="toggleSidebarMobile"
                         ariaExpanded="true"
                         ariaControls="sidebar"
-                        className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
+                        className="lg:hidden ms-2 mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
                         onClick={handleClick}
                       >
                         {/* <img src={ArrowLeftIcon} alt="icon" /> */}X
+                        <span className="ms-1"> Close</span>
                       </button>
+                    </div>
+                    <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
+                      <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
+                        <img src={profile} alt="profile" />
+                      </div>
+                      <div className="">
+                        <h1 className="text-[17px] font-semibold">Mohammed Al-Haj</h1>
+                        <p
+                          className="flex text-[15px] font-normal"
+                          style={{
+                            color:
+                              "var(--label-color-light-secondary, rgba(60, 60, 67, 0.60))",
+                          }}
+                        >
+                          {" "}
+                          <img src={Label} alt="icon" />
+                          <span className="h-[5px] w-[5px] bg-[#3C3C4399] rounded-full mt-2 mx-1"></span>
+                          Expert Trader{" "}
+                        </p>
+                      </div>
+                      <p>
+                        <img src={ChevronLeftSmall} alt="icon" />
+                      </p>
+
                     </div>
                     <Sidebar />
                   </div>
@@ -104,7 +153,7 @@ const Layout = ({ children }) => {
             </div>
           </div>
 
-          <div className="md:hidden block">
+          <div className="md:hidden block mt-[70px]">
             <BottomNavBar />
           </div>
         </div>
