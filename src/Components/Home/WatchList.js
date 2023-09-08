@@ -5,7 +5,7 @@ import ie from "./../../Assets/Home/Logo (2).png";
 import Right from "./../../Assets/Home/Logo (3).png";
 const WatchList = () => {
   return (
-    <div className="w-full px-[2px] md:px-4">
+    <div className="w-full px-[2px] md:px-0">
       <h2 className=" text-xl font-semibold mb-4">Watch list</h2>
       <div className="p-6 w-[312px] h-[240px] rounded-[20px] shadow bg-white">
         <div className="flex">

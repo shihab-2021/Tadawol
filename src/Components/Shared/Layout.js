@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 // import { Link, useLocation } from "react-router-dom";
 import Logo from "../../Assets/Shared/Logo.png";
+import Menu from "../../Assets/Shared/Menu.png";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import profile from "../../Assets/Navbar/profile.png";
+import BottomNavBar from "./BottomNavBar";
 
 const Layout = ({ children }) => {
   const [toggleButton, setToggleButton] = useState(true);
@@ -29,15 +33,14 @@ const Layout = ({ children }) => {
       <div>
         <div>
           <nav
-            className={`bg-[#25282c] border-b border-gray-200 fixed z-30 w-full lg:hidden ${
+            className={`bg-white fixed z-30 w-full lg:hidden ${
               toggleButton ? "" : "hidden"
             }`}
           >
             <div className="px-3 py-3 lg:px-5 lg:pl-3">
               <div
-                className={`flex items-center justify-between ${
-                  toggleButton ? "" : "hidden"
-                }`}
+                className={`flex items-center justify-between ${toggleButton ? "" : "hidden"
+                  }`}
               >
                 <button
                   id="toggleSidebarMobile"
@@ -46,36 +49,27 @@ const Layout = ({ children }) => {
                   className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
                   onClick={handleClick}
                 >
-                  <svg
-                    id="toggleSidebarMobileHamburger"
-                    className={`w-6 h-6 ${toggleButton ? "" : "hidden"}`}
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
+                  <img src={Menu} alt="Menu" />
                 </button>
-                <div>
-                  <img className="h-6 lg:h-8" src={Logo} alt="logo" />
+                <div className="flex items-center">
+                  <div>
+                    <NotificationsIcon />
+                  </div>
+                  <div className="bg-[#EAF3E6] rounded-[100px] h-[44px] w-[44px] flex justify-center items-center ms-3">
+                    <img src={profile} alt="profile" />
+                  </div>
                 </div>
               </div>
             </div>
           </nav>
-
           <div className="flex overflow-hidden">
             <aside
               id="sidebar"
-              className={`h-full min-h-[100vh] relative ${
-                toggleButton ? "hidden" : ""
-              } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
+              className={`h-full min-h-[100vh] relative ${toggleButton ? "hidden" : ""
+                } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150`}
               aria-label="Sidebar"
             >
-              <div className="fixed h-full w-[250px] flex-1 flex flex-col min-h-0 pt-0">
+              <div className="fixed bg-white h-full w-[250px] flex-1 flex flex-col min-h-0 pt-0">
                 <div className="flex-1 flex flex-col pb-4 overflow-y-auto">
                   <div className="flex-1 space-y-1">
                     <div className="py-8 h-[70px] flex items-center justify-between lg:justify-center">
@@ -108,6 +102,10 @@ const Layout = ({ children }) => {
                 <div className="">{children}</div>
               </main>
             </div>
+          </div>
+
+          <div className="md:hidden block">
+            <BottomNavBar />
           </div>
         </div>
       </div>

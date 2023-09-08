@@ -12,7 +12,7 @@ const Wallet = () => {
   const [openMakeDeposit, setOpenMakeDeposit] = useState(false);
   const [openWithdraw, setWithdraw] = useState(true);
   return (
-    <div className="w-full px-[2px] md:px-4">
+    <div className="w-full px-[2px] md:px-0">
       <div className=" w-full">
         <div className=" hidden md:block text-xl font-semibold mb-0 md:mb-4">
           Wallet
