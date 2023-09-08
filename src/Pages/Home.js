@@ -7,12 +7,17 @@ import Trades from "../Components/Home/Trades";
 
 const Home = () => {
   return (
-    <div className="md:bg-[#F2F2F7]">
+    <div className="md:bg-[#F2F2F7] bg-white">
       <Layout>
-        <Trades />
+        <div className="md:block hidden">
+          <Trades />
+        </div>
         <div className="mx-auto max-w-[885px] mt-[80px] md:mt-[40px] flex items-center flex-col lg:flex-row gap-[32px] 2xl:gap-[60px] ">
           <Wallet />
           <WatchList />
+        </div>
+        <div className="block md:hidden">
+          <Trades />
         </div>
         <TopTraders />
       </Layout>
