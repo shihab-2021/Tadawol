@@ -34,7 +34,7 @@ const Sidebar = () => {
       className={` flex flex-col justify-between `}
     >
       <ul className="space-y-2 py-2 ">
-        <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
+        <div className=" flex gap-3 items-center mb-4 bg-[#fff] rounded-2xl lg:hidden ">
           <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
             <img src={profile} alt="profile" />
           </div>
@@ -131,7 +131,7 @@ const Sidebar = () => {
               }}
             >
               {" "}
-              Language{" "}
+              Logout
             </p>
           </li>
         </ul>

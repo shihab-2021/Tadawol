@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../Assets/Shared/Logo.png";
 import Close from "../../Assets/Shared/Close.png";
 import Menu from "../../Assets/Shared/Menu.png";
 import Sidebar from "./Sidebar";
@@ -7,15 +6,12 @@ import Navbar from "./Navbar";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import profile from "../../Assets/Navbar/profile.png";
 import BottomNavBar from "./BottomNavBar";
-import Label from "../../Assets/Navbar/Label.png";
-import ChevronLeftSmall from "../../Assets/Home/ChevronLeftSmall.png";
 import logo from "../../Assets/Navbar/logo.png";
 
 const Layout = ({ children }) => {
   const [toggleButton, setToggleButton] = useState(true);
   const [screenSmall, setScreenSmall] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
-  const createCoursePage = localStorage.getItem("createCoursePage");
   // const location = useLocation();
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -35,17 +31,9 @@ const Layout = ({ children }) => {
     <div>
       <div>
         <div>
-          <nav
-            className={`bg-white fixed z-30 w-full lg:hidden ${
-              toggleButton ? "" : "hidden"
-            }`}
-          >
+          <nav className={`bg-white fixed z-30 w-full lg:hidden `}>
             <div className="px-3 py-3 lg:px-5 lg:pl-3">
-              <div
-                className={`flex items-center justify-between ${
-                  toggleButton ? "" : "hidden"
-                }`}
-              >
+              <div className={`flex items-center justify-between `}>
                 <div className="flex items-center">
                   <button
                     id="toggleSidebarMobile"
@@ -86,7 +74,7 @@ const Layout = ({ children }) => {
               id="sidebar"
               className={` absolute md:relative h-full min-h-[100vh] z-[70] ${
                 toggleButton ? "hidden" : ""
-              } z-20 top-0 bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-[250px] transition duration-500 ease-in-out delay-150 `}
+              } z-20 top-0 bg-[#0000008c] md:bg-[#fff] border-r-[1px] left-0 flex lg:flex flex-shrink-0 flex-col w-full md:w-[250px] transition duration-500 ease-in-out delay-150 `}
               aria-label="Sidebar"
             >
               <div className="fixed bg-white h-full w-[250px] flex-1 flex flex-col min-h-0 pt-0">
@@ -117,31 +105,6 @@ const Layout = ({ children }) => {
                         <span className="ms-1"> Close</span>
                       </button>
                     </div>
-                    {/* <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
-                      <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
-                        <img src={profile} alt="profile" />
-                      </div>
-                      <div className="">
-                        <h1 className="text-[17px] font-semibold">
-                          Mohammed Al-Haj
-                        </h1>
-                        <p
-                          className="flex text-[15px] font-normal"
-                          style={{
-                            color:
-                              "var(--label-color-light-secondary, rgba(60, 60, 67, 0.60))",
-                          }}
-                        >
-                          {" "}
-                          <img src={Label} alt="icon" />
-                          <span className="h-[5px] w-[5px] bg-[#3C3C4399] rounded-full mt-2 mx-1"></span>
-                          Expert Trader{" "}
-                        </p>
-                      </div>
-                      <p>
-                        <img src={ChevronLeftSmall} alt="icon" />
-                      </p>
-                    </div> */}
                     <Sidebar />
                   </div>
                 </div>

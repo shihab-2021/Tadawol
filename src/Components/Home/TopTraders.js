@@ -3,9 +3,9 @@ import Profile2 from "./../../Assets/Home/ProfileImg2.png";
 import Profile3 from "./../../Assets/Home/ProfileImg3.png";
 const TopTraders = () => {
   return (
-    <div>
+    <div className="bg-[#F2F2F7] md:bg-transparent mt-5 rounded-[20px] px-2 pb-5 ">
       <div className="md:w-[885px] mx-auto my-[40px]">
-        <div className="flex justify-between ">
+        <div className="flex justify-between pt-[28px] md:pt-0 ">
           <h2 className="text-xl font-semibold mb-4">Top Traders</h2>
           <a href="/" className="flex items-center text-[17px] text-[#99999F]">
             <span className="mr-1">See All </span>

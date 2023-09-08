@@ -30,14 +30,17 @@ const Navbar = () => {
         <div className="w-[50%] flex items-center justify-end me-[14px]">
           <div className="flex">
             <NotificationsIcon />
-            <p className="h-[20px] w-[20px] flex justify-center items-center text-xs font-medium ms-[-10px] mt-[-8px]"
+            <p
+              className="h-[20px] w-[20px] flex justify-center items-center text-xs font-medium ms-[-10px] mt-[-8px]"
               style={{
                 borderRadius: "32px",
-                border: "2px solid var(--system-background-light-primary, #FFF)",
-                background: "var(--brand-lime-green, #D9F867)"
-
+                border:
+                  "2px solid var(--system-background-light-primary, #FFF)",
+                background: "var(--brand-lime-green, #D9F867)",
               }}
-            >3</p>
+            >
+              3
+            </p>
           </div>
           <div className="ms-[29px]">
             <h1 className="text-[17px] font-semibold">Mohammed Al-Haj</h1>

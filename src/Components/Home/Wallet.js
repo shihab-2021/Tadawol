@@ -47,7 +47,7 @@ const Wallet = () => {
             </div>
             <div>
               <button
-                onClick={() => setOpenMoneyOverview(true)}
+                // onClick={() => setOpenMoneyOverview(true)}
                 className="hidden md:block relative"
               >
                 <svg
@@ -100,7 +100,7 @@ const Wallet = () => {
       </div>
       <div className="flex items-center">
         <button
-          onClick={() => setOpenMoneyOverview(true)}
+          // onClick={() => setOpenMoneyOverview(true)}
           className="mx-auto mt-[-35px] z-10 border-4 border-white rounded-full md:hidden"
         >
           <svg
