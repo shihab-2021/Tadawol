@@ -10,6 +10,7 @@ import delete1 from "../../Assets/Home/Delete.svg";
 const Wallet = () => {
   const [openMoneyOverview, setOpenMoneyOverview] = useState(false);
   const [openMakeDeposit, setOpenMakeDeposit] = useState(false);
+  const [openWithdraw, setWithdraw] = useState(false);
   return (
     <div className="w-full px-[2px] md:px-0">
       <div className=" w-full">
@@ -17,7 +18,7 @@ const Wallet = () => {
           Wallet
         </div>
         <div className="relative overflow-hidden bg-[#005A58] md:w-[545px] rounded-[20px] md:p-10 text-white pt-[81px] pb-14 px-7">
-          <div className=" absolute top-[-570px] right-0">
+          <div className=" absolute top-[-400px] sm:top-[-550px] md:top-[-570px] right-0">
             <img src={GradientImg} alt="GradientImg" />
           </div>
           <p className="text-[17px] ">Total Wallet Balance </p>
@@ -273,7 +274,19 @@ const Wallet = () => {
               }}
             >
               <p className=" text-[15px] font-normal">Currency</p>
-              <p className="text-[17px] font-semibold">USD</p>
+              {/* <p className="text-[17px] font-semibold">USD</p> */}
+              <select
+                required
+                className="text-[17px] w-[40px] font-semibold  text-black focus:outline-none appearance-none"
+                name="option"
+                id="option"
+              >
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="SAR">SAR</option>
+                <option value="RUB">RUB</option>
+                <option value="ILS">ILS</option>
+              </select>
               <p>
                 <img src={Dropdown} alt="icon" />
               </p>
@@ -347,6 +360,149 @@ const Wallet = () => {
             }}
           >
             Deposit
+          </p>
+        </div>
+      </DialogLayout>
+
+      <DialogLayout
+        iconColor={""}
+        open={openWithdraw}
+        setOpen={setWithdraw}
+        bgColor={""}
+        width={515}
+        borderRadius={20}
+      >
+        <div className="">
+          <div
+            className=" text-center"
+            style={{
+              background:
+                "radial-gradient(100% 100% at 50% 0%, #FFE075 0%, rgba(255, 224, 117, 0.93) 35.99%, rgba(255, 224, 117, 0.00) 100%)",
+            }}
+          >
+            <p className=" text-[#3C3C4399] text-[17px] font-normal pt-[40px]">
+              Withdraw From Your Account
+            </p>
+            <h1 className=" text-[#000] font-bold text-[22px] mt-1 ">
+              Withdraw Money
+            </h1>
+            <p className=" text-[#000] text-[68px] font-normal">
+              {" "}
+              <span
+                className="text-[52px] font-normal"
+                style={{
+                  opacity: "0.5",
+                }}
+              >
+                $
+              </span>{" "}
+              00.00
+            </p>
+            <p className=" text-[#3C3C4399] text-[15px] font-normal">
+              The maximum withdrawal limit is{" "}
+              <span className="text-[20px]">$5000</span>
+              <span className=" w-[10px]  rounded-full mb-2 mx-1">.</span>
+              <span className="text-[13px]">Withdrawal fee</span>
+              <span className="ms-1">$8.28</span>
+            </p>
+          </div>
+
+          <div className="flex justify-between mt-[28px] mx-[28px]">
+            <button
+              className=" flex gap-2 justify-center items-center px-[16px] py-[4px] "
+              style={{
+                borderRadius: "100px",
+                border:
+                  "1px solid var(--system-default-system-gray-04-light, #D1D1D6)",
+              }}
+            >
+              <p className=" text-[15px] font-normal">Currency</p>
+              {/* <p className="text-[17px] font-semibold">USD</p> */}
+              <select
+                required
+                className="text-[17px] w-[40px] font-semibold  text-black focus:outline-none appearance-none"
+                name="option"
+                id="option"
+              >
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="SAR">SAR</option>
+                <option value="RUB">RUB</option>
+                <option value="ILS">ILS</option>
+              </select>
+              <p>
+                <img src={Dropdown} alt="icon" />
+              </p>
+            </button>
+
+            <button
+              className=" flex gap-2 justify-center items-center px-[16px] py-[4px] "
+              style={{
+                borderRadius: "100px",
+                background: "var(--system-background-light-secondary, #F2F2F7)",
+              }}
+            >
+              <p className=" text-[15px] font-normal">Deposit by</p>
+              <p
+                className="text-[17px] font-semibold"
+                style={{
+                  fill: "var(--label-color-light-primary, #000)",
+                }}
+              >
+                VISA
+              </p>
+              <p>
+                <img src={ChevronLeftSmall} alt="icon" />
+              </p>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-3 w-full mt-[28px] ">
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              1
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              2
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y ">
+              3
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              4
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              5
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y ">
+              6
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              7
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y border-e">
+              8
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center border-y ">
+              9
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center  border-e">
+              .
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center  border-e">
+              0
+            </p>
+            <p className="text-[36px] font-normal flex items-center justify-center  ">
+              <img src={delete1} alt="delete Icon" />
+            </p>
+          </div>
+          <p
+            className="w-full flex justify-center py-4 mt-2 text-[#005A58] text-xl font-semibold  mb-8"
+            style={{
+              borderRadius: "100px",
+              background: "var(--brand-apricot, #FFE175)",
+            }}
+          >
+            Withdraw
           </p>
         </div>
       </DialogLayout>
