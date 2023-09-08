@@ -117,7 +117,7 @@ const Layout = ({ children }) => {
                         <span className="ms-1"> Close</span>
                       </button>
                     </div>
-                    <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
+                    {/* <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
                       <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
                         <img src={profile} alt="profile" />
                       </div>
@@ -141,7 +141,7 @@ const Layout = ({ children }) => {
                       <p>
                         <img src={ChevronLeftSmall} alt="icon" />
                       </p>
-                    </div>
+                    </div> */}
                     <Sidebar />
                   </div>
                 </div>

@@ -5,6 +5,8 @@ import Wallet from "../../Assets/Navbar/Wallet.png";
 import Search from "../../Assets/Navbar/Search.png";
 import MoneyManagement from "../../Assets/Navbar/MoneyManagement.png";
 import ChevronLeftSmall from "../../Assets/Navbar/ChevronLeftSmall.png";
+import Label from "../../Assets/Navbar/Label.png";
+import profile from "../../Assets/Navbar/profile.png";
 
 const Sidebar = () => {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
@@ -31,8 +33,31 @@ const Sidebar = () => {
       }}
       className={` flex flex-col justify-between `}
     >
-      <ul className="space-y-2 px-[22px] py-2 ">
-        <li>
+      <ul className="space-y-2 py-2 ">
+        <div className=" flex gap-3 items-center bg-[#fff] rounded-2xl lg:hidden ">
+          <div className="bg-[#EAF3E6] rounded-[100px]  h-[44px] w-[44px] flex justify-center items-center ms-3">
+            <img src={profile} alt="profile" />
+          </div>
+          <div className="">
+            <h1 className="text-[17px] font-semibold">Mohammed Al-Haj</h1>
+            <p
+              className="flex text-[15px] font-normal"
+              style={{
+                color:
+                  "var(--label-color-light-secondary, rgba(60, 60, 67, 0.60))",
+              }}
+            >
+              {" "}
+              <img src={Label} alt="icon" />
+              <span className="h-[5px] w-[5px] bg-[#3C3C4399] rounded-full mt-2 mx-1"></span>
+              Expert Trader{" "}
+            </p>
+          </div>
+          <p>
+            <img src={ChevronLeftSmall} alt="icon" />
+          </p>
+        </div>
+        <li className="px-[22px]">
           <p
             className="flex items-center gap-2 text-[#34908E] text-[15px] font-semibold p-2"
             style={{
@@ -43,23 +68,22 @@ const Sidebar = () => {
             <img src={home} alt="icon" /> Home
           </p>
         </li>
-        <li>
+        <li className="px-[22px]">
           <p className="flex items-center gap-2  text-[15px] font-medium p-2">
             <img src={WatchingList} alt="icon" /> Watchlist
           </p>
         </li>
-        <li>
+        <li className="px-[22px]">
           <p className="flex items-center gap-2  text-[15px] font-medium p-2">
             <img src={Wallet} alt="icon" /> Wallet
           </p>
         </li>
-        <li>
+        <li className="px-[22px]">
           <p className="flex items-center gap-2  text-[15px] font-medium p-2">
             <img src={Search} alt="icon" /> Search
           </p>
         </li>
-
-        <li>
+        <li className="px-[22px]">
           <p
             className="flex items-center gap-2 text-[#fff] text-[15px] font-semibold p-2"
             style={{
@@ -70,7 +94,7 @@ const Sidebar = () => {
             <img src={MoneyManagement} alt="icon" /> Money Management
           </p>
         </li>
-        <li>
+        <li className="px-[22px]">
           <p
             className="flex items-center gap-2 text-[] text-[15px] font-semibold p-2"
             style={{
