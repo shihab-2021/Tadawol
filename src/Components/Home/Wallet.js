@@ -18,7 +18,7 @@ const Wallet = () => {
           Wallet
         </div>
         <div className="relative overflow-hidden bg-[#005A58] md:w-[545px] rounded-[20px] md:p-10 text-white pt-[81px] pb-14 px-7">
-          <div className=" absolute top-[-570px] right-0">
+          <div className=" absolute top-[-400px] sm:top-[-550px] md:top-[-570px] right-0">
             <img src={GradientImg} alt="GradientImg" />
           </div>
           <p className="text-[17px] ">Total Wallet Balance </p>
