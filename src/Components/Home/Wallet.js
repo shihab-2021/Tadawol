@@ -10,7 +10,7 @@ import delete1 from "../../Assets/Home/Delete.svg";
 const Wallet = () => {
   const [openMoneyOverview, setOpenMoneyOverview] = useState(false);
   const [openMakeDeposit, setOpenMakeDeposit] = useState(false);
-  const [openWithdraw, setWithdraw] = useState(true);
+  const [openWithdraw, setWithdraw] = useState(false);
   return (
     <div className="w-full px-[2px] md:px-0">
       <div className=" w-full">
@@ -381,10 +381,10 @@ const Wallet = () => {
             }}
           >
             <p className=" text-[#3C3C4399] text-[17px] font-normal pt-[40px]">
-            Withdraw From Your Account
+              Withdraw From Your Account
             </p>
             <h1 className=" text-[#000] font-bold text-[22px] mt-1 ">
-            Withdraw Money
+              Withdraw Money
             </h1>
             <p className=" text-[#000] text-[68px] font-normal">
               {" "}
@@ -399,7 +399,7 @@ const Wallet = () => {
               00.00
             </p>
             <p className=" text-[#3C3C4399] text-[15px] font-normal">
-            The maximum withdrawal limit is{" "}
+              The maximum withdrawal limit is{" "}
               <span className="text-[20px]">$5000</span>
               <span className=" w-[10px]  rounded-full mb-2 mx-1">.</span>
               <span className="text-[13px]">Withdrawal fee</span>
@@ -506,8 +506,6 @@ const Wallet = () => {
           </p>
         </div>
       </DialogLayout>
-
-
     </div>
   );
 };
